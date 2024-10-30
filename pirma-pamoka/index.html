@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pirma pamoka JS</title>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <h1>Hello!</h1>
+
+    <h2 id="heading">Content</h2>
+    <!-- ivyksta DOM manipuliacija butent tame faile, kuris jau atsisiustas narsykles -->
+    <button
+      onclick="document.getElementById('heading').innerHTML = 'Hello World!'"
+    >
+      Pakeisk heading teksta
+    </button>
+
+    <!-- inline js -->
+    <button onclick="console.log(1)">Spausk mane!</button>
+    <button onclick="alert(2)">Spausk mane!</button>
+    <!--  -->
+  </body>
+</html>
