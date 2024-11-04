@@ -76,12 +76,14 @@ console.log('Kavos uzsakymo kaina: ' + uzsakymas);
 // 9. Uždavinys: PVM skaičiavimas
 // Sukurk kintamuosius kainaBePVM ir pvm, kurie išsaugos prekės kainą ir PVM procentą (pvz., 21). Programa turi apskaičiuoti kainą su PVM.
 
-const kainaBePVM = '+ x';
+const kainaBePVM = null;
 const PVM = 21;
 
-const sumaPVM = ` ${kainaBePVM} * ${PVM} / 100`;
+const sumaPVM = ` ${kainaBePVM} * ${PVM}`;
 
-console.log('PVM sumos skaiciuokle: ' + sumaPVM + kainaBePVM);
+// console.log('PVM sumos skaiciuokle: ' + (sumaPVM + kainaBePVM));
+
+console.log('PVM sumos skaiciuokle: ' + sumaPVM / 100);
 
 // 10. Uždavinys: Automobilio kuro sąnaudos
 // Sukurk kintamuosius nuvaziuotiKm, kuroSanaudos ir kuroKaina. Parašyk programą, kuri apskaičiuoja kiek kainuos nukeliauti nuvaziuotiKm su šiuo automobiliu.
