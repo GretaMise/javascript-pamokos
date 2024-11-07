@@ -83,3 +83,12 @@ if (metai < 4) {
 } else if (metai >= 40) {
   console.log('suauges');
 }
+
+// Conditional (ternary) operator
+
+// salyga ? true : false
+
+let age = 18;
+let ageStatus = age >= 18 ? 'adult' : 'child';
+
+console.log(ageStatus); // adult
