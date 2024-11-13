@@ -61,7 +61,6 @@ if (arTuriBilieta) {
 
 // 12. Susikurti 3 skaicius. Surasti, kuris is siu skaiciu yra didziausias.
 
-// Declare three variables
 let q = 15;
 let w = 25;
 let e = 10;
@@ -75,7 +74,7 @@ if (q > w && q > e) {
 } else {
   largest = e;
 }
-console.log('The largest number is:', largest);
+console.log('Didziausias skaicius:', largest);
 
 // 13. Susikurti 3 skaicius. Surasti, kuris is siu skaiciu yra maziausias.
 
@@ -93,7 +92,17 @@ if (t < y && t < u) {
   lowest = u;
 }
 
-console.log('The lowest number is:', lowest);
+console.log('Maziausias skaicius:', lowest);
+
+// Pavyzdukas su mathmax:
+
+let r = 20;
+let x = 10;
+let l = 15;
+
+let didziausiasSkaicius = Math.max(r, x, l);
+
+console.log(didziausiasSkaicius);
 
 // 14. Susikurti triju egzaminu rezultatu kintamuosius. Surasti pazymiu vidurki. Atlikti siuos patikrinimus:
 // 14.1 ar gautas vidurkis yra [8-10];
@@ -127,3 +136,25 @@ let n = 9;
 // 15.2 ar antras skaicius yra didesnis uz pirmaji arba lygus 5;
 // 15.3 ar pirmas skaicius yra didesnis uz antraji ir yra lygus 20;
 // 15.4 ar antras skaicius yra didesnis uz pirmaji ir yra mazesnis uz 100.
+
+if (v > n || v === 0) {
+  console.log(`Pirmas skaicius yra didesnis uz antraji arba lygus 0`);
+} else {
+  console.log(`Pirmas skaicius nera didesnis uz antraji arba lygus 0`);
+}
+
+if (n > v || n === 3) {
+  console.log(`Antrasis skaicius yra didesnis uz antraji arba lygus 3`);
+}
+
+if (v > n && v === 20) {
+  console.log(`Pirmas skaicius yra didesnis uz antraji ir yra lygus 20`);
+} else {
+  console.log(`pirmas skaicius NERA didesnis uz antraji ir NERA yra lygus 20`);
+}
+
+if (n > v && n < 100) {
+  console.log(
+    `antras skaicius yra didesnis uz pirmaji ir yra mazesnis uz 100.`
+  );
+}
