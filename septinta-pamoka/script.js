@@ -57,6 +57,17 @@ console.log(
 // Uzduotys is classroom (PAPILDOMOS)
 
 // 1. Kurjerio pristatymo patikrinimas
+// Sukurti sistema, kuri patikrins ar uzsakymas bus pristatytas ta pacia diena.
+// Pristatymas ta pacia diena galimas, jei uzsakymas buvo pateiktas iki tam tikros valandos (pvz. 15val -IMTINAI (cia nuo saves pridejau)) ir jei preke yra sandelyje.
+
+let uzsakymasPateiktas = 14;
+let yraSandelyje = false;
+
+if (uzsakymasPateiktas <= 15 && yraSandelyje) {
+  console.log(`Jusu uzsakymas bus pristatytias siandien`);
+} else {
+  console.log(`Jusu uzsakymas bus pristatytas rytoj.`);
+}
 
 // 2. Amziaus kategorijos nustatymas:
 // Pagal amziu nustato kategorija: vaikas, paauglys, suauges, senjoras.
@@ -67,8 +78,6 @@ console.log(
 // Jei 65 ir daugiau - senjoras.
 
 const metai = 40;
-
-// let category;
 
 if (metai < 13) {
   console.log('Vaikas');
@@ -106,15 +115,17 @@ console.log(`Jusu nuolaida yra ${nuolaida}%`);
 // jei lankytojas vyresnis nei 60 metu, jam taip pat taikoma 15% nuolaida.
 // Kitais atvejais nuolaida netaikoma.
 
-const studentas = true;
-let amzius = 19;
+let studentas = false;
+let amzius = 17;
 let gaunaNuolaida = 0;
 
 if (amzius < 18 || studentas || amzius > 60) {
-  nuolaida = 15;
+  gaunaNuolaida = 15;
 } else {
-  nuolaida = 'Nuolaida netaikoma';
+  gaunaNuolaida = 'Nuolaida netaikoma';
 }
+
+console.log(`Ar jusu uzsakymui priskirta nuolaida %: ${gaunaNuolaida}`);
 
 // 5. Egzamino ivertinimas pagal bala
 
@@ -128,4 +139,108 @@ if (egzaminas >= 90 && 100) {
   console.log('Patenkinamai');
 } else if (egzaminas < 50) {
   console.log('Nepatenkinamai');
+}
+
+// 6. Kino bilietu kainos nustatymas
+// Jei lankytojas yra vaikas (maziau nei 12 metu), bilieto kaina yra 5 eurai.
+// Jei lankytojas yra suauges ir eina i dienos seansa (iki 17val), bilieto kaina yra 7 eur.
+// Jei lankytojas yra suauges ir eina i vakarini seansa (nuo 17 val), bilieto kaina yra 10.
+// Jei lankytojas yra senjoras (daugiau nei 65m), bilieto kaina yra 6eur.
+
+let age = 66;
+let showTime = 19;
+
+if (age < 12) {
+  console.log(`The ticket cost you 5 eur.`);
+} else if (age >= 12 && age <= 65 && showTime < 17) {
+  console.log(`The tickes cost you 7 eur.`);
+} else if (age >= 12 && age <= 65 && showTime >= 17) {
+  console.log(`The ticket cost you 10 eur`);
+} else if (age > 65) {
+  console.log(`The ticket cost you 6 eur`);
+}
+
+// 7. Atsiskaitymo su nuolaida sistema
+// jei pirkimo suma virsija 100 eur ir siandien yra treciadienis, taikoma 15% nuolaida.
+// Jei pirkimo suma virsija 50 eur ir siandien yra penktadienis, taikoma 10% nuolaida.
+// Kitais atvejais nuolaida netaikoma.
+
+let purchase = 61;
+const wednesday = false;
+const friday = true;
+
+let discount = 0;
+
+if (purchase > 100 && wednesday) {
+  discount = 15;
+} else if (purchase > 50 && friday) {
+  discount = 10;
+}
+
+if (discount > 0) {
+  console.log(
+    `Congrats! The ${discount}% discount has been applied to your purchase!`
+  );
+} else {
+  console.log(`No discount applied.. Better luck next time!`);
+}
+
+// 8. Laikmatis darbo laiko patirkinimui
+// Darbo laikas: nuo 9:00 iki 17:00.
+// Jei laikas patenka i darbo laika, programa turi grazinti pranesima 'Dabar darbo laikas'
+// Jei laikas nepatenka i darbo laika, programa turi grazinti pranesima 'Dabar ne darbo laikas'.
+
+let time = 12;
+
+if (time >= 9.0 && time <= 17.0) {
+  console.log('Dabar darbo laikas');
+} else {
+  console.log('Dabar ne darbo laikas');
+}
+
+// PASIKLAUSTI: kodel su || apima viska, del to 8.10 YRA  darbo laikas, o su && jau atitinka salyga. Su && paimamas nurodytas intervalas? Bet vistiek 8 turetu atitikti <= 17...?
+
+// 9. Mokesciu apskaiciavimas pagal pajamas
+// Jei pajamos mazesnes nei 10k eur per metus, mokestis yra 5%.
+// Jei pajamos yra tarp 10k ir 30k eur per metus, mokestis yra 10%.
+// Jei pajamos yra tarp 30k ir 60k eur per metus, mokestis yra 15%.
+// Jei pajamos yra daugiau nei 60k eur per metus, mokestis yra 20%.
+
+let annualIncome = 730000;
+let taxes = 0;
+
+if (annualIncome < 10000) {
+  taxes = 5;
+} else if (annualIncome >= 10000 && annualIncome < 30000) {
+  taxes = 10;
+} else if (annualIncome >= 30000 && annualIncome < 60000) {
+  taxes = 15;
+} else if (annualIncome >= 60000) {
+  taxes = 20;
+}
+
+console.log(
+  `You've been taxed ${taxes}% as your annual income is ${annualIncome}. `
+);
+
+// 10. Bibliotekos knygu skolinimo trukmes patikrinimas.
+// Jei skaitytojas yra studentas, jis gali skolintis knyga 30 d.
+// Jei skaitytojas yra mokytojas, jis gali skolintis knyga 60 d.
+// Jei skaitytojas yra bibliotekos narys, bet nei studentas, nei mokytojas, jis gali skolintis knyga 14d.
+// Jei skaitytojas nera bibliotekos narys, jis negali skolintis knygos.
+
+let student = false;
+let teachingStaff = false;
+let member = true;
+
+if (student) {
+  console.log(`Your borrowing duration is 30d`);
+} else if (teachingStaff) {
+  console.log(`Your borrowing duration is 60d`);
+} else if (member) {
+  console.log(`Your borrowing duration is 14d`);
+} else {
+  console.log(
+    `You can't borrow books because you are neither a member, a staff member, nor a student.`
+  );
 }
