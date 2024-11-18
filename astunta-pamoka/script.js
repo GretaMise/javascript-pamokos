@@ -192,10 +192,52 @@ for (let i = 0; i <= 15; i += 2) {
 for (let i = 1; i <= 20; i += 3) {
   console.log([i]);
 }
+// arba
+for (let i = 1; i <= 20; i += 3) {
+  console.log(`[${i}]`);
+}
+
 // 4. parasyti for, kuris eitu pro kiekviena skaiciu pradedant nuo 1 ir baigiant 20. Jame aprasyti if salyga, kuri patikrintu ar dabartinis skaicius dalinasi is 4, jei taip, tai si skaiciu isvesti.
+for (let i = 1; i <= 20; i++) {
+  if (i % 4 === 0) {
+    console.log(i);
+  }
+}
 
 // 5. Susikurti kintamuosius reziu pradziai ir pabaigai nusakyti. Patikrinti, kad tai butu validu (pradzia turi buti ne mazesne nei pabaiga). Jei reziai tinkami, tuomet vykdyti for, kuris atskirose eilutese isvestu kiekviena skaiciu is tu reziu, bei atskiriant tarpu - tu skaiciu kvadratus.
+let start = 3;
+let end = 8;
 
-// 6. Susikurti kintamuosius reziu pradziai ir pabaigai nusakyti. Patikrinti, kad tai butu validu (pradzia turi buti mazesne nei pabaiga). Jei reziai tinkami, tuomet vykdyti for, kuris is duotu skaiciu isvestu visus nelyginius skaicius arba tuos, kurie dalinasi ir 8.
+if (start < end) {
+  for (let i = start; i <= end; i++) {
+    console.log(`${i} ${i ** 2}`);
+  }
+} else {
+  console.log(`kodas nevykdomas, patikrinti kintamuosius`);
+}
 
-// Be daugybos veiksmo programoje, sudauginti du skaicius
+// 6. Susikurti kintamuosius reziu pradziai ir pabaigai nusakyti. Patikrinti, kad tai butu validu (pradzia turi buti mazesne nei pabaiga). Jei reziai tinkami, tuomet vykdyti for, kuris is duotu skaiciu isvestu visus nelyginius skaicius arba tuos, kurie dalinasi is 8.
+
+let pradzia = 3;
+let pabaiga = 8;
+
+if (start < end) {
+  for (let i = pradzia; i <= pabaiga; i++) {
+    if (i % 2 === 1 || i % 8 === 0) {
+      console.log(i);
+    }
+  }
+} else {
+  console.log(`kodas nevykdomas, patikrinti kintamuosius`);
+}
+// 7. Be daugybos veiksmo programoje, sudauginti du skaicius
+
+let num1 = 5;
+let num2 = 3;
+let result = 0;
+
+for (let i = 0; i < Math.abs(num2); i++) {
+  result += num1;
+}
+
+console.log(result);
