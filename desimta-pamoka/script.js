@@ -220,3 +220,50 @@ for (let i = 0; i < 10; i++) {
 console.log('Random skaiciai: ', tusciass);
 
 // 5. Susikurti du masyvus dvieju studentu pazymiams saugoti. Ivesti po 3-5 pazymius kiekvienam studentui (iskart kuriant masyvus arba per push funkcija). Suskaiciuoti ir isvesti ju vidurkius. issiaiskinti, kurio studento vidurkis didesnis ir isvesti atsakyma.
+
+// // Funkcija, kuri apskaičiuoja vidurkį
+// function calculateAverage(grades) {
+//   let summm = 0;
+//   for (let i = 0; i < grades.length; i++) {
+//     summm += grades[i];
+//   }
+//   return summm / grades.length;
+// }
+
+// // Apskaičiuojame vidurkius
+// let stud1Average = calculateAverage(stud1);
+// let stud2Average = calculateAverage(stud2);
+
+// // Išvedame vidurkius
+// console.log(`Pirmo studento vidurkis: ${stud1Average}`);
+// console.log(`Antro studento vidurkis: ${stud2Average}`);
+
+// // Nustatome, kurio studento vidurkis didesnis
+// if (stud1Average > stud2Average) {
+//   console.log('Pirmo studento vidurkis yra didesnis.');
+// } else if (stud1Average < stud2Average) {
+//   console.log('Antro studento vidurkis yra didesnis.');
+// } else {
+//   console.log('Abiejų studentų vidurkiai yra vienodi.');
+// }
+
+let stud1 = [6, 8, 9, 2, 10];
+let stud2 = [7, 8, 3, 7, 9];
+
+let summm1 = stud1[0] + stud1[1] + stud1[2] + stud1[3] + stud1[4];
+let vidurkis1 = summm1 / stud1.length;
+
+console.log(vidurkis1);
+
+let summm2 = stud2[0] + stud2[1] + stud2[2] + stud2[3] + stud2[4];
+let vidurkis2 = summm2 / stud2.length;
+
+console.log(vidurkis2);
+
+if (vidurkis1 > vidurkis2) {
+  console.log(`Pirmojo mokinio vidurkis yra didesnis`);
+} else if (vidurkis2 > vidurkis1) {
+  console.log(`Antrojo mokinio vidurkis yra didesnis`);
+} else {
+  console.log(`Abu vidurkiai lygus`);
+}
