@@ -89,18 +89,40 @@ for (let i = 0; i < numbers.length; i++) {
 
 // 10. Susikurti skaiciu masyva ir uzpildyti ji atsitiktiniais skaiciais. Rasti visu skaiciu, kurie dalinasi is 4 suma.
 
-let tusciass = [];
+// let tusciass = [];
 
-for (let i = 0; i < 10; i++) {
-  let betKoks = Math.floor(Math.random() * 100) + 1;
-  tusciass.push(betKoks);
+// for (let i = 0; i < 10; i++) {
+//   let betKoks = Math.floor(Math.random() * 100) + 1;
+//   tusciass.push(betKoks);
+// }
+
+// console.log('Random skaiciai: ', tusciass);
+
+// let dalinasiIs4 = tusciass.filter((num) => num % 4 === 0);
+
+// console.log('Dalinasi is 4:  ', dalinasiIs4);
+
+const skaiciuMasyvas2 = [];
+const limitas = 10;
+let sumaIs4 = 0;
+for (let i = 0; i < limitas; i++) {
+  const randomNumber = Math.floor(Math.random() * 100) + 1;
+  skaiciuMasyvas2.push(randomNumber);
 }
 
-console.log('Random skaiciai: ', tusciass);
+console.log(skaiciuMasyvas2);
 
-let dalinasiIs4 = tusciass.filter((num) => num % 4 === 0);
+for (let i = 0; i < skaiciuMasyvas2.length; i++) {
+  const skaic = skaiciuMasyvas2[i];
 
-console.log('Dalinasi is 4:  ', dalinasiIs4);
+  if (skaic % 4 === 0) {
+    console.log(skaic);
+    sumaIs4 += skaic;
+  }
+}
+
+console.log(skaiciuMasyvas2);
+console.log(sumaIs4);
 
 // 11. susikurti pazymiu masyva ir uzpildyti atsitiktiniais pazymiais. Rasti siu pazymiu vidurki. Isversti sugeneruotus duomenis ir gauta vidurki.
 
@@ -118,7 +140,7 @@ for (let i = 0; i < pazymiai.length; i++) {
   suma += pazymiai[i];
 }
 let vidurkis = suma / pazymiai.length;
-
+console.log(`Suma: `, suma);
 console.log('Vidurkis: ', vidurkis.toFixed(0));
 
 // 12. susikurti pazymiu masyva ir uzpildyti atsitiktiniais pazymiais. Rasti siu pazymiu vidurki. Isversti visus skaicius, kurie yra didesni, nei vidurkis.
@@ -143,6 +165,53 @@ for (let i = 0; i < duom.length; i++) {
 }
 // 14. Susikurkite studento pazymiu masyva ir uzpildyti ji duomenimis (atsitiktiniais arba kokius irasysiu). Isvesti kiekviena pazymi atskiroje eiluteje. Prie kiekvieno pazymio nurodyti ar tai teigiamas, ar neigiamas pazymys. Taip pat, jeigu jeigu neigiamas pazymys, tuomet dar nurodyti kiek balu truko iki teigiamo pazymio. Teigiamas pazymys yra 5 balai.
 
+let studentGrades = [4, 6, 3, 5, 7, 2, 8, 10];
+
+for (let i = 0; i < studentGrades.length; i++) {
+  let grade = studentGrades[i];
+
+  if (grade >= 5) {
+    console.log(`Pazymys: ${grade} - Teigiamas.`);
+  } else {
+    let pointsNeeded = 5 - grade;
+    console.log(
+      `Pazymys: ${grade} - Neigiamas. Truksta ${pointsNeeded} iki teigiamo pazymio.`
+    );
+  }
+}
+
 // 15. Susikurti zodziu masyva ir uzpildyti duomenimis. Isvesti visus zodziu ekrane, nurodant is kiek raidziu kiekvienas zodis yra sudarytas. Papildyti skripta taip, kad rasciau visu raidziu kieki.
 
+let words = ['programavimas', 'JavaScript', 'masyvas', 'kodas', 'kompiuteris'];
+
+let totalLetters = 0;
+
+for (let i = 0; i < words.length; i++) {
+  let word = words[i];
+  let letterCount = word.length;
+  totalLetters += letterCount;
+
+  console.log(`Zodis: "${word}" - Raidziu skaicius: ${letterCount}`);
+}
+
+console.log(`Viso raidziu: ${totalLetters}`);
+
 // 16. Susikurti skaiciu masyva ir uzpildyti duomenimis. Rasti visu skaiciu, kurie dalinasi is 3 suma ir vidurki.
+
+let nO = [1, 3, 4, 6, 9, 12, 15, 20, 21, 25];
+let sum = 0;
+let count = 0;
+
+for (let i = 0; i < nO.length; i++) {
+  let number = nO[i];
+
+  if (number % 3 === 0) {
+    sum += number;
+    count++;
+  }
+}
+
+let average = count > 0 ? sum / count : 0;
+
+console.log(`Suma skaiciu, kurie dalinasii is 3: ${sum}`);
+console.log(`Vidurkis skaiciu, kurie dalinasi is 3: ${average}`);
