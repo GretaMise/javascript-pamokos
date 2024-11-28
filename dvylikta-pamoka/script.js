@@ -285,18 +285,18 @@ let zodziai = ['obuolys', 'kate', 'suo', 'vanduo'];
 
 let trumpiZodziai = [];
 
-for (let i = 0; i < zodziai.length; i++) {
-  if (zodziai[i].length < 5) {
-    trumpiZodziai.push(zodziai[i]);
+for (let zodis of zodziai) {
+  if (zodis.length < 5) {
+    trumpiZodziai.push(zodis);
   }
 }
 
 console.log('Visi:');
-for (let i = 0; i < zodziai.length; i++) {
-  console.log(zodziai[i]);
+for (let zodis of zodziai) {
+  console.log(zodis);
 }
 
 console.log('Tik trumpi:');
-for (let i = 0; i < trumpiZodziai.length; i++) {
-  console.log(trumpiZodziai[i]);
+for (let zodis of trumpiZodziai) {
+  console.log(zodis);
 }
