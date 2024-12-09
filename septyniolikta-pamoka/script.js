@@ -167,25 +167,21 @@ isvestiAutomobilius('BMW', 'X5', 2018, 3.0);
 
 // 12. Sukurkite funkcija sumai skaiciuoti, si funkcija per argumentus turetu gauti du skaicius, bei isvesti pati veiksma kartu su atsakymu (pvz 7 + 5 = 12). Sukurkite tokias pacias funkcijas skirtumui, sandaugai ir dalmeniui rasti. Sukurkite dar viena, funkcija, kuri sugeneruoty du atsitiktinius skaidius, bei iskviesty kitas 4 funkcijas, perduodant joms sugeneruotus skaitius. Sia bendraja funkcija iskvieskite keleta karty.
 
-// Funkcija sumai skaiciuoti
 function suma(skaicius1, skaicius2) {
   const rezultatas = skaicius1 + skaicius2;
   console.log(skaicius1 + ' + ' + skaicius2 + ' = ' + rezultatas);
 }
 
-// Funkcija skirtumui skaiciuoti
 function skirtumas(skaicius1, skaicius2) {
   const rezultatas = skaicius1 - skaicius2;
   console.log(skaicius1 + ' - ' + skaicius2 + ' = ' + rezultatas);
 }
 
-// Funkcija sandaugai skaiciuoti
 function sandauga(skaicius1, skaicius2) {
   const rezultatas = skaicius1 * skaicius2;
   console.log(skaicius1 + ' * ' + skaicius2 + ' = ' + rezultatas);
 }
 
-// Funkcija dalmeniui skaiciuoti
 function dalmuo(skaicius1, skaicius2) {
   if (skaicius2 !== 0) {
     const rezultatas = skaicius1 / skaicius2;
@@ -211,46 +207,15 @@ generuotiIrIskvieti();
 generuotiIrIskvieti();
 
 // 13. Susikurkite funkcija, kuri per argumentus priimty Zodziy masyva. Funkcijoje isveskite visus Zodzius is masyvo atskirose eilutèse, nurodant zodio ilgi (simboliy kiek). Uz funkcijos ribu susikurkite Zodziy masyva ir upildykite ji duomenimis. Iskvieskite sukurta funkcija perduodant turima masyva.
-
-function suma(skaicius1, skaicius2) {
-  const rezultatas = skaicius1 + skaicius2;
-  console.log(skaicius1 + ' + ' + skaicius2 + ' = ' + rezultatas);
-}
-
-function skirtumas(skaicius1, skaicius2) {
-  const rezultatas = skaicius1 - skaicius2;
-  console.log(skaicius1 + ' - ' + skaicius2 + ' = ' + rezultatas);
-}
-
-function sandauga(skaicius1, skaicius2) {
-  const rezultatas = skaicius1 * skaicius2;
-  console.log(skaicius1 + ' * ' + skaicius2 + ' = ' + rezultatas);
-}
-
-function dalmuo(skaicius1, skaicius2) {
-  if (skaicius2 !== 0) {
-    const rezultatas = skaicius1 / skaicius2;
-    console.log(skaicius1 + ' / ' + skaicius2 + ' = ' + rezultatas);
-  } else {
-    console.log('Negalima dalinti is nulio!');
+function isvestiZodzius(zodziai) {
+  for (let i = 0; i < zodziai.length; i++) {
+    console.log(zodziai[i] + ' (ilgis: ' + zodziai[i].length + ' simboliai)');
   }
 }
 
-function generuotiIrIskvieti() {
-  const skaicius1 = Math.floor(Math.random() * 100);
-  const skaicius2 = Math.floor(Math.random() * 100);
+const zodziuMasyvas = ['obuolys', 'bananas', 'kriause', 'kivis', 'apelsinas'];
 
-  console.log('Sugeneruoti skaičiai: ' + skaicius1 + ', ' + skaicius2);
-
-  suma(skaicius1, skaicius2);
-  skirtumas(skaicius1, skaicius2);
-  sandauga(skaicius1, skaicius2);
-  dalmuo(skaicius1, skaicius2);
-}
-
-generuotiIrIskvieti();
-generuotiIrIskvieti();
-generuotiIrIskvieti();
+isvestiZodzius(zodziuMasyvas);
 
 // 14. Susikurkite funkcija, kuri per argumentus priimty skaiciy masyva. Funkcija turety atspausdinti visus skaicius, salia jy isvedant to skaiciaus kvadrata ir ji padalinta is dvieju. Ut funkcijos ribu susikurkite du skaiiy masyvus ir upildykite ji duomenimis. Iskvieskite funkcija du kartus, kiekviena karta perduodant skirtinga turima masyva.
 
@@ -296,7 +261,7 @@ const studentas1 = {
 
 const studentas2 = {
   vardas: 'Ona',
-  pavarde: 'Onaitytė',
+  pavarde: 'Onaite',
   pazymiai: [10, 10, 9, 8, 9],
 };
 
