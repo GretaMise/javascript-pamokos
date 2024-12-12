@@ -47,3 +47,11 @@ element.classList.add('naujaKlase');
 element.style.color = 'red';
 element.style.padding = '100px';
 element.style.margin = '50px';
+
+// Padaryk kazka kiekvienam elementui ir masyvo;
+// Sugalvojam pavadinima ir nurodom kaip argument;
+// Viduje funkcijos atliekam norimus veiksmus su butent tuo elementu
+
+allElements.forEach((element) => {
+  element.style.color = 'red';
+});
