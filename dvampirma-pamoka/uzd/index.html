@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="lt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./script.js"></script>
+    <title>Naudotojo informacijos forma</title>
+    <style>
+      /* apsirasom stiliu */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .form-container {
+        margin-bottom: 20px;
+      }
+
+      /* stilius to konteineriuko, kuris bus atvaizduotas ivedus duomenis */
+      .result-container {
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Naudotojo informacijos forma</h1>
+    <div class="form-container">
+      <label for="name">Vardas:</label>
+      <input
+        type="text"
+        id="name"
+        required
+        placeholder="Iveskite savo varda"
+      /><br /><br />
+
+      <label for="age">Amzius:</label>
+      <input
+        type="number"
+        id="age"
+        required
+        placeholder="Iveskite savo amziu"
+      /><br /><br />
+
+      <label for="color">Mgstama spalva:</label>
+      <input
+        type="text"
+        id="color"
+        required
+        placeholder="Pvz. red, blue.."
+      /><br /><br />
+      <hr />
+      <br />
+
+      <button onclick="showInfo()">Rodyti informacija</button>
+      <button onclick="deleteEntry()">Istrinti irasa</button>
+      <button type="button" id="reset">Delete</button>
+    </div>
+    <hr />
+
+    <div class="result-container" id="result" style="display: none">
+      <h2>Ivesti duomenys:</h2>
+      <!-- script faile yra aprasytas document. of output, kuris pirmiau surenka cia ivesta info, o veliau atvaizduoja( pagal prasyma!!!!! result) -->
+      <p id="output"></p>
+    </div>
+  </body>
+</html>
