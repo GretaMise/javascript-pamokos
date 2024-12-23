@@ -20,6 +20,7 @@ function calculateBreadProduction() {
   // validumas
   if (isNaN(employeeCount) || isNaN(loavesPerEmployee) || isNaN(orderCount)) {
     alert('Prasome ivesti teisingus skaicius/kieki.');
+    // padarom return, kad toliau kodo nebeskaitytu, iseitu is funkcijos
     return;
   }
 
