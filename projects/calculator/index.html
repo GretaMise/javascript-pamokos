@@ -14,22 +14,28 @@
         <input type="text" id="calc-input" readonly />
       </div>
       <div class="buttons">
-        <button onclick="onNumberClick(7)">7</button>
-        <button onclick="onNumberClick(8)">8</button>
-        <button onclick="onNumberClick(9)">9</button>
+        <button onclick="onNumberClick('7')">7</button>
+        <button onclick="onNumberClick('8')">8</button>
+        <button onclick="onNumberClick('9')">9</button>
         <button onclick="onActionClick('*')">*</button>
-        <button onclick="onNumberClick(4)">4</button>
-        <button onclick="onNumberClick(5)">5</button>
-        <button onclick="onNumberClick(6)">6</button>
+        <button onclick="onNumberClick('4')">4</button>
+        <button onclick="onNumberClick('5')">5</button>
+        <button onclick="onNumberClick('6')">6</button>
         <button onclick="onActionClick('/')">/</button>
-        <button onclick="onNumberClick(1)">1</button>
-        <button onclick="onNumberClick(2)">2</button>
-        <button onclick="onNumberClick(3)">3</button>
+        <button onclick="onNumberClick('1')">1</button>
+        <button onclick="onNumberClick('2')">2</button>
+        <button onclick="onNumberClick('3')">3</button>
         <button onclick="onActionClick('+')">+</button>
-        <button onclick="onNumberClick(0)">0</button>
+        <button onclick="onNumberClick('0')">0</button>
         <button onclick="onClearCalculator()">C</button>
         <button onclick="onEqualClick()">=</button>
         <button onclick="onActionClick('-')">-</button>
+        <button onclick="onNumberClick(',')">,</button>
+      </div>
+      <button onclick="showHistory()">History</button>
+      <div id="history" style="margin-top: 20px">
+        <h3>Calculation History</h3>
+        <ul id="history-list"></ul>
       </div>
     </div>
   </body>
