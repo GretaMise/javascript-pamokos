@@ -1,4 +1,5 @@
 let firstNumber = 0;
+let secondNumber = 0;
 let action = '+';
 let answer = 0;
 
@@ -17,21 +18,20 @@ function onActionClick(clickedAction) {
 }
 
 function onEqualClick() {
-  let splitted = input.value.split(' ').map((part) => part.trim());
+  // 5 * 2
+  let splitted = input.value.split(' ');
+  //   ['5', '*', '2']
+  //   5
+  firstNumber = parseInt(splitted[0]);
+  //   *
+  action = splitted[1];
+  //   2
+  secondNumber = parseInt(splitted[2]);
+  //   iskvieciame skaiciavimo funkcija
+  calculateAnswer();
+  input.value = answer;
 
-  if (splitted[0] === '' || splitted[0] === '0') {
-    alert('The first number cannot be zero.');
-    return;
-  }
-
-  let numbers = splitted.map((num) => parseFloat(num.replace(',', '.')));
-
-  calculateAnswer(numbers);
-
-  input.value = answer.toFixed(2).replace('.', ',');
-  calculation.innerHTML = `${numbers.join(` ${action} `)} = ${answer
-    .toFixed(2)
-    .replace('.', ',')}`;
+  calculation.innerHTML = `${firstNumber} ${action} ${secondNumber}`;
 }
 
 function calculateAnswer(numbers) {
