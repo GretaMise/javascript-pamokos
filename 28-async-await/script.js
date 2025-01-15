@@ -115,7 +115,7 @@ arLyginiaiSkaiciai(skaiciuMasyvas, callback);
 function patikrinkZodzioIlgi(masyvas, callbackFunkcija) {
   masyvas.forEach((zodis) => {
     const ilgis = callbackFunkcija(zodis);
-    console.log(`Zodis "${zodis}" turi ${ilgis} raidziu.`);
+    console.log(`Zodis "${zodis}" turi ${ilgis} raides.`);
   });
 }
 
@@ -133,7 +133,12 @@ patikrinkZodzioIlgi(zodziuMasyvas, koksIlgis);
 //objekto properties, tarkim tik markė ir modelis)
 
 function patikrinkAutomobilius(automobiliuMasyvas, callbackAutomobiliai) {
-  const patikrinkAutomobilius = automobiliuMasyvas.map((automobilis) => {
+  //  .map - atkartoja reikiama info is masyvo. Jis nekeicia esamo masyvo, o sukuria nauja. >>> method is a built-in array method in JavaScript that creates a new array by applying a provided function to each element of the original array. It is commonly used for transforming data in an array without mutating the original array.
+  // vietoje .map galima naudoti:
+  // 1. .forEach
+  // 2. for
+  // 3. for...of
+  return automobiliuMasyvas.map((automobilis) => {
     return callbackAutomobiliai(automobilis);
   });
 }
@@ -147,34 +152,75 @@ function atrinkMasinas(automobilis) {
 
 const automobiliuMasyvas = [
   {
-    rida: 10000,
+    rida: 54784,
     marke: 'Toyota',
-    modelis: 'Corolla',
-    gamybosMetai: 2015,
+    modelis: 'Yaris',
+    gamybosMetai: 2000,
     kaina: 5000,
   },
   {
-    rida: 20000,
+    rida: 36172,
     marke: 'Honda',
-    modelis: 'Civic',
+    modelis: 'Jazz',
     gamybosMetai: 2018,
     kaina: 7000,
   },
   {
-    rida: 30000,
+    rida: 51255637,
     marke: 'Ford',
-    modelis: 'Focus',
+    modelis: 'Fiesta',
     gamybosMetai: 2020,
     kaina: 9000,
   },
 ];
 
-const patikrinkAutomobilius = patikrinkAutomobilius(
+const atrinktiAutomobiliai = patikrinkAutomobilius(
   automobiliuMasyvas,
   atrinkMasinas
 );
-console.log(patikrinkAutomobilius);
 
-// 6. Sukurkite funkciją, kuri priims parametrą isUserLogedIn (reikšmė gali būti true arba false). Jūsų funkcijos viduje, naudojantis Promise konstruktoriumi, sukursite naują promise objektą, kuris tikrins ar isUserLogedIn yra true ar false, jeigu paduotas parametras ar false, jūsų sukurtas promise turėtų reject’inti užklausą, kitu atveju - resolvinam ir grąžinam pasirinktą pranešimą. Iškvieskite tą funkciją naudojantis then ir catch, o gautą rezultatą atvaizduokite konsolėje.
+console.log(atrinktiAutomobiliai);
+
+// 6. Sukurkite funkciją, kuri priims parametrą isUserLogedIn (reikšmė gali būti true arba false).
+// Jūsų funkcijos viduje, naudojantis Promise konstruktoriumi, sukursite naują promise objektą,
+// kuris tikrins ar isUserLogedIn yra true ar false, jeigu paduotas parametras ar false,
+// jūsų sukurtas promise turėtų reject’inti užklausą, kitu atveju - resolvinam ir grąžinam
+// pasirinktą pranešimą. Iškvieskite tą funkciją naudojantis then ir catch, o gautą rezultatą atvaizduokite konsolėje.
+
+function checkUser(isUserLogedIn) {
+  return new Promise((resolve, reject) => {
+    if (isUserLogedIn) {
+      resolve('Happy days, you are online :)');
+    } else {
+      reject('Please login');
+    }
+  });
+}
+
+checkUser(true)
+  .then((message) => console.log(message))
+  .catch((error) => console.error(error));
+
+// checkUser(false)
+//   .then((message) => console.log(message))
+//   .catch((error) => console.error(error));
 
 // 7. Sukurkite async funkciją, kuri priimtų parametrą "age". Funkcijos viduje padarykite patikrinimą ar "age" yra paduotas ir ar jis yra skaičius - priešingu atveju iškvieskite klaidą (throw). Toliau tikrinkite ar amžius yra daugiau nei 18, jeigu taip, grąžinkite, kad “vartotojas gali laikyti vairuotojo egzaminą", priešingu atveju iškvieskite klaidą (throw) ir parašykite, kad "jūsų amžius turi būti daugiau nei 18". Iškvieskite šią funkciją naudojantis then ir catch.
+
+// async pavercia funkcija promise
+async function checkAge(age) {
+  if (!age) {
+    throw new Error('Age is required');
+  }
+  if (typeof age !== 'number') {
+    throw new Error('Age must be a number');
+  }
+  if (age <= 18) {
+    throw new Error('Your age must be more than 18');
+  }
+  return 'You can take the driving test';
+}
+
+checkAge(25)
+  .then((message) => console.log(message))
+  .catch((error) => console.error(error));
