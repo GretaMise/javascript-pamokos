@@ -2,6 +2,7 @@
 
 const searchInput = document.getElementById('searchInput');
 const moviesContainer = document.getElementById('moviesContainer');
+let debounceTimer;
 
 const fetchMovies = async (query = '') => {
   const api = 'https://api.tvmaze.com/shows';
@@ -41,7 +42,12 @@ const displayMovies = (movies) => {
 };
 
 searchInput.addEventListener('input', (event) => {
-  fetchMovies(event.target.value);
+  const inputValue = event.target.value;
+
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(() => {
+    fetchMovies(inputValue);
+  }, 500);
 });
 
 fetchMovies();
