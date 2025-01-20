@@ -1,0 +1,22 @@
+{
+  "students": [
+    {
+      "id": "abc4",
+      "name": "Petras",
+      "surname": "Petraitis",
+      "age": 40
+    },
+    {
+      "id": "9f51",
+      "name": "GretaMissaas",
+      "surname": "Gretaite",
+      "age": 25
+    },
+    {
+      "id": "9e4f",
+      "name": "Greta",
+      "surname": "Alio",
+      "age": "34"
+    }
+  ]
+}

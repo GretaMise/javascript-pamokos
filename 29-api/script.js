@@ -9,9 +9,12 @@ const fetchMovies = async (query = '') => {
   const searchApi = `https://api.tvmaze.com/search/shows?q=${query}`;
   const url = query ? searchApi : api;
   try {
-    const response = await fetch(url);
-    const data = await response.json();
-    displayMovies(query ? data : data.map((show) => ({ show })));
+    const response = await axios.get(url);
+    // const response = await fetch(url);
+    // const data = await response.json();
+    displayMovies(
+      query ? response.data : response.data.map((show) => ({ show }))
+    );
   } catch (error) {
     console.error(error);
   }
